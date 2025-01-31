@@ -15,6 +15,5 @@ document.getElementById('comment-form').addEventListener('submit', function(e) {
     
     document.getElementById('comments-list').appendChild(commentDiv);
     
-    // Reset form
     this.reset();
 }); 
