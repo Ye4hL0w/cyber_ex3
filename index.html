@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Blog Sécurisé</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="animate-title">CryptoBlog</h1>
+            <p class="subtitle">Partagez vos pensées crypto sur ce blog !</p>
+        </header>
+
+        <main>
+            <article class="blog-post">
+                <h2>Les Cryptomonnaies : Une Révolution Financière</h2>
+                <p>Les cryptomonnaies, comme le Bitcoin, ont transformé notre perception de l'argent. Leur popularité croissante attire à la fois les particuliers et les institutions.</p>
+                <br>
+                <p>La blockchain, technologie clé, assure transparence et sécurité, en enregistrant chaque transaction de manière immuable.</p>
+                <br>
+                <p>Cependant, le marché reste volatile. Il est crucial d'investir prudemment et de diversifier son portefeuille.</p>
+            </article>
+
+            <section class="comments-section">
+                <h3>Commentaires</h3>
+                <div id="comments-list"></div>
+                
+                <form id="comment-form">
+                    <input type="text" id="name" placeholder="Votre nom" required>
+                    <textarea id="comment" placeholder="Votre commentaire" required></textarea>
+                    <button type="submit">Publier</button>
+                </form>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
