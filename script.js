@@ -4,23 +4,20 @@ document.getElementById('comment-form').addEventListener('submit', function(e) {
     const name = document.getElementById('name').value;
     const commentText = document.getElementById('comment').value;
     
-    // Création du commentaire via DOM API
     const commentWrapper = document.createElement('div');
     commentWrapper.className = 'comment';
     
-    // Utilisation de createTextNode pour masquer l'intention
     const nameNode = document.createElement('strong');
     const commentNode = document.createElement('p');
     
-    // La vulnérabilité est ici, mais plus subtile
     nameNode.id = 'user_content';
     commentNode.id = 'comment_content';
     
-    // Utilisation de data attributes
+    // Attention : La vulnérabilité ici est que les entrées de
+    // l'utilisateur ne sont pas échappées, ce qui permet une attaque XSS.
     nameNode.dataset.content = name;
     commentNode.dataset.content = commentText;
     
-    // Injection différée via requestAnimationFrame
     requestAnimationFrame(() => {
         nameNode.insertAdjacentHTML('afterbegin', nameNode.dataset.content);
         commentNode.insertAdjacentHTML('afterbegin', commentNode.dataset.content);

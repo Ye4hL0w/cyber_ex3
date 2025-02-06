@@ -4,9 +4,14 @@ services:
   web:
     build: .
     ports:
-      - "8080:80"
+      - "3000:80"
     networks:
       - burp-network
+    environment:
+      - HTTP_PROXY=http://host.docker.internal:8080
+      - HTTPS_PROXY=http://host.docker.internal:8080
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
 
 networks:
   burp-network:
